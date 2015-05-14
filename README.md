@@ -9,14 +9,14 @@ Installation
 
 To install Dato Predictive Service Python Client, simply:
 
-```no-highlight
-$ sudo pip install PredictiveServiceClient
+```bash
+sudo pip install PredictiveServiceClient
 ```
 
 or from source:
 
-```no-highlight
-$ sudo python setup.py install
+```bash
+sudo python setup.py install
 ``` 
 
 Requirements
@@ -36,7 +36,7 @@ following information from a running Dato Predictive Service:
 
 Once you have obtained the above information, simply create a new PredictiveServiceClient:
 ```python
-from predictive_service_client import PredictiveServiceClient;
+from dato.deploy import PredictiveServiceClient;
 
 client = PredictiveServiceClient(endpoint = <endpoint>,
                                  api_key = <api_key>,
@@ -48,7 +48,7 @@ set the ``should_verify_certificate`` to **true**. However, if you Predictive Se
 is launched with a self-signed certificate or without certificate, please 
 set ``should_verify_certificate`` to **false**.
 
-The PredictiveServiceClient can also be created from a Predictive Service
+The PredictiveServiceClient can also be created by using a Predictive Service
 [client configuration file](https://dato.com/products/create/docs/generated/graphlab.deploy.PredictiveService.save_client_config.html).
 ```python
 client = PredictiveServiceClient(config_file = <path_to_file>)
@@ -69,7 +69,7 @@ data = {'users': ['Jacob Smith'] }
 result = client.query('rec', method = 'recommend', data = data)
 ```
 
-** Notes **
+**Notes**
 
 - Different models could support different query methods (recommend, predict, query, etc.)
   and different syntax and format for **data**. For now, you will need to know the
@@ -110,7 +110,7 @@ Once you get the query result, you can submit feedback data corresponding to thi
 back to the Predictive Service. This feedback data can be used for evaluating your
 current model and training future models.
 
-To submit feedbacks data corresponding to a particular query, you will need the UUID
+To submit feedback data corresponding to a particular query, you will need the UUID
 of the query. The UUID can be easily obtained from the query result.
 
 ```python
