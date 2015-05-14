@@ -1,6 +1,6 @@
 """
 This module defines PredictiveServiceClient that consumes service provided
-by GraphLab Create Predictive Service.
+by Dato Predictive Service.
 """
 
 import os
@@ -155,18 +155,18 @@ class PredictiveServiceClient(object):
             be in result['response']
 
         '''
-        if type(uri) is not str:
-            raise TypeError("'uri' has to be a string")
+        if type(name) is not str:
+            raise TypeError("'name' has to be a string")
 
         # convert to valid url
-        uri = urllib.quote(uri)
+        name = urllib.quote(name)
 
         internal_data = {'api_key': self.api_key, 'data': kwargs}
-        response = self._post('query/%s' % uri, internal_data, timeout=self.query_timeout)
+        response = self._post('query/%s' % name, internal_data, timeout=self.query_timeout)
         if response.status_code == 200:
             return response.json()
         elif response.status_code == 404:
-            raise NonExistError("Predictive Object '%s' cannot be found" % uri)
+            raise NonExistError("Predictive Object '%s' cannot be found" % name)
         else:
             raise RuntimeError('Query error status: %s, error: %s' % (response.status_code, response.text))
 

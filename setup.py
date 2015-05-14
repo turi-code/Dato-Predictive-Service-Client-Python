@@ -22,12 +22,12 @@ import glob
 import subprocess
 from setuptools import setup, find_packages
 
-PACKAGE_NAME="PredictiveServiceClient"
+PACKAGE_NAME="Dato-Predictive-Service-Client"
 VERSION="1.0.0"
 
 if __name__ == '__main__':
     setup(
-        name="PredictiveServiceClient",
+        name="Dato-Predictive-Service-Client",
         version=VERSION,
         author='Dato, Inc.',
         author_email='contact@dato.com',
