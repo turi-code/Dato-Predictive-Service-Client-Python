@@ -44,7 +44,7 @@ client = PredictiveServiceClient(endpoint = <endpoint>,
 ``` 
 
 To enable SSL certificate verification for this Predictive Service, 
-set the ``should_verify_certificate`` to **true**. However, if you Predictive Service
+set the ``should_verify_certificate`` to **true**. However, if your Predictive Service
 is launched with a self-signed certificate or without certificate, please 
 set ``should_verify_certificate`` to **false**.
 
@@ -56,7 +56,7 @@ client = PredictiveServiceClient(config_file = <path_to_file>)
 
 #### Query
 
-To query a model that is deployed on the Predictive Service. You will need:
+To query a model that is deployed on the Predictive Service, you will need:
 
 * model name
 * method to query (recommend, predict, query, etc.)
@@ -72,7 +72,7 @@ result = client.query('rec', method = 'recommend', data = data)
 **Notes**
 
 - Different models could support different query methods (recommend, predict, query, etc.)
-  and different syntax and format for **data**. For now, you will need to know the
+  and different syntax and format for **data**. You will need to know the
   supported methods and query data format before querying the model.
 
 #### Set timeout
