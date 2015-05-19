@@ -11,7 +11,7 @@ To install Dato Predictive Service Python Client, simply:
 
 .. code-block:: bash
 
-    sudo pip install PredictiveServiceClient
+    sudo pip install dato-predictive-service-client
 
 or from source:
 
