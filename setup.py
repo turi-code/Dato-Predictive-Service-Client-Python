@@ -22,12 +22,16 @@ import glob
 import subprocess
 from setuptools import setup, find_packages
 
-PACKAGE_NAME="Dato-Predictive-Service-Client"
-VERSION="1.0.2"
+PACKAGE_NAME="dato-predictive-service-client"
+VERSION="1.0.0"
+
+f = open(os.path.join(os.path.dirname(__file__), 'README.rst'))
+long_description = f.read()
+f.close()
 
 if __name__ == '__main__':
     setup(
-        name="Dato-Predictive-Service-Client",
+        name=PACKAGE_NAME,
         version=VERSION,
         author='Dato, Inc.',
         author_email='support@dato.com',
@@ -35,7 +39,7 @@ if __name__ == '__main__':
         url='https://github.com/dato-code/Dato-Predictive-Service-Client-Python',
         license='LICENSE',
         description='Dato Predictive Service Client makes it easy to make REST API calls to Dato Predictive Services',
-        long_description='Documentation at https://github.com/dato-code/Dato-Predictive-Service-Client-Python',
+        long_description=long_description,
         classifiers=[
             "Development Status :: 4 - Beta",
             "Environment :: Console",
